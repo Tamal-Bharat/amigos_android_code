@@ -1,0 +1,43 @@
+[22:22:50] 
+
+[22:22:50] ****************************
+[22:22:50] Log File Created
+[22:22:50] Request from: 90015419 - Tamal Biswas
+[22:22:50] [FACE] Time: 0.00s | Confidence: 0.94 | Saved: frames\frame_0000.jpg
+[22:22:50] [FACE] Time: 3.00s | Confidence: 0.94 | Saved: frames\frame_0001.jpg
+[22:22:50] frame could not be read
+[22:22:50] RESULT: Face detected in the video
+[22:22:53] Embeddings stored successfully
+[22:22:55] Embeddings stored successfully
+[22:23:10] 
+
+[22:23:10] ****************************
+[22:23:10] Log File Created
+[22:23:10] Request from: 90015419 - Tamal Biswas
+[22:23:10] [FACE] Time: 0.00s | Confidence: 0.94 | Saved: frames\frame_0000.jpg
+[22:23:11] [FACE] Time: 3.00s | Confidence: 0.94 | Saved: frames\frame_0001.jpg
+[22:23:11] frame could not be read
+[22:23:11] RESULT: Face detected in the video
+[22:23:13] Embeddings stored successfully
+[22:23:15] Embeddings stored successfully
+[22:24:33] 
+
+[22:24:33] ****************************
+[22:24:33] Log File Created
+[22:24:33] Request from: 90015419 - Tamal Biswas
+[22:24:33] [FACE] Time: 0.00s | Confidence: 0.94 | Saved: frames\frame_0000.jpg
+[22:24:33] [FACE] Time: 3.00s | Confidence: 0.94 | Saved: frames\frame_0001.jpg
+[22:24:33] frame could not be read
+[22:24:33] RESULT: Face detected in the video
+[22:24:56] connection to server at "192.168.29.197", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[22:24:56] DB Connection is None
+[22:24:56] DB Connection is None
+[22:24:56] No embedding saved
+[22:25:19] connection to server at "192.168.29.197", port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[22:25:19] DB Connection is None
+[22:25:19] DB Connection is None
+[22:25:19] No embedding saved
