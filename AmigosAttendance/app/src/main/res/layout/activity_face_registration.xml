@@ -28,7 +28,27 @@
                 android:layout_height="450dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:visibility="gone"/>
+
+            <com.amigos.attendance.utilities.AspectRatioVideoView
+                android:id="@+id/faceReg_VideoView"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:id="@+id/videoTip_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Recorded video will appear here"
+                android:textColor="#D70E53"
+                android:textSize="20sp"
+                android:visibility="visible"/>
 
             <!-- Controls -->
             <LinearLayout
@@ -44,7 +64,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Start Recording" />
+                    android:text="Start Face Recording" />
 
                 <EditText
                     android:id="@+id/regEmpId_editText"
@@ -71,12 +91,23 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Register Face" />
+                    android:text="Register Employee" />
 
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/faceRegistrationProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="#0F78CB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

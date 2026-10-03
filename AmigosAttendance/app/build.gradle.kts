@@ -58,6 +58,9 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.4.2")
     implementation("androidx.camera:camera-view:1.4.2")
 
+    //Dependency of JSON converter
+    implementation("com.google.code.gson:gson:2.11.0")
+
     //Dependency to Integrate AI Image model in onnx format
     implementation("com.microsoft.onnxruntime:onnxruntime-android:1.20.0")
 

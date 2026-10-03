@@ -22,7 +22,11 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.MediaController;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
@@ -36,13 +40,14 @@ import androidx.core.content.FileProvider;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.amigos.attendance.OkHttpHelper.UploadFaceRecordingOkHttp;
 import com.amigos.attendance.R;
 import com.amigos.attendance.fragments.RegisterFaceCameraFragment;
 import com.amigos.attendance.utilities.ApplicationConstants;
+import com.amigos.attendance.utilities.AspectRatioVideoView;
 import com.amigos.attendance.utilities.DialogUtility;
 import com.amigos.attendance.utilities.MobilePermissionHelper;
+import com.amigos.attendance.utilities.NetworkUtils;
 import com.amigos.attendance.utilities.SqliteDatabaseHelper;
 
 import java.io.File;
@@ -54,6 +59,12 @@ public class FaceRegistrationActivity extends AppCompatActivity {
     Button regFace_btn;
     EditText regEmpId_editText;
     EditText regEmpName_editText;
+    TextView videoTip_textView;
+
+    //VideoView faceReg_VideoView;
+    AspectRatioVideoView faceReg_VideoView;
+
+    ProgressBar faceRegistrationProgressBar;
 
     private Uri videoUri;
     private ActivityResultLauncher<Intent> videoCaptureLauncher;
@@ -114,7 +125,13 @@ public class FaceRegistrationActivity extends AppCompatActivity {
         regFace_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerFace();
+                if(NetworkUtils.isInternetAvailable(FaceRegistrationActivity.this)){
+                    registerFace();
+                }
+                else{
+                    new DialogUtility().getMeterialDialog(FaceRegistrationActivity.this, "Error!!", "Please make available the internet", "error");
+                }
+
             }
         });
 
@@ -126,6 +143,18 @@ public class FaceRegistrationActivity extends AppCompatActivity {
         regFace_btn = findViewById(R.id.regFace_btn);
         regEmpId_editText = findViewById(R.id.regEmpId_editText);
         regEmpName_editText = findViewById(R.id.regEmpName_editText);
+        videoTip_textView = findViewById(R.id.videoTip_textView);
+        faceRegistrationProgressBar = findViewById(R.id.faceRegistrationProgressBar);
+
+        faceReg_VideoView = findViewById(R.id.faceReg_VideoView);
+
+        /*
+        // Initialize ExoPlayer
+        exoPlayer = new ExoPlayer.Builder(FaceRegistrationActivity.this).build();
+
+        // Attach player to PlayerView
+        faceReg_VideoView.setPlayer(exoPlayer);
+        */
 
         videoCaptureLauncher =
                 registerForActivityResult(
@@ -157,6 +186,34 @@ public class FaceRegistrationActivity extends AppCompatActivity {
                                 System.out.println("AAAA--> " + "VIDEO SAVED: " + videoUri);
                                 new DialogUtility().getMeterialDialog(FaceRegistrationActivity.this, "Success!!", "Face Video Recording Saved", "info");
 
+
+                                faceReg_VideoView.setVideoURI(videoUri);
+                                MediaController mediaController = new MediaController(FaceRegistrationActivity.this);
+                                mediaController.setAnchorView(faceReg_VideoView);
+                                faceReg_VideoView.setMediaController(mediaController);
+
+                                faceReg_VideoView.setOnPreparedListener(mp -> {
+
+                                    int videoWidth = mp.getVideoWidth();
+                                    int videoHeight = mp.getVideoHeight();
+
+                                    faceReg_VideoView.setVideoDimensions(
+                                            videoWidth,
+                                            videoHeight
+                                    );
+
+                                    mp.setLooping(false);
+
+                                    // Start playback after the video is prepared
+                                    faceReg_VideoView.start();
+
+                                    // Request layout refresh
+                                    faceReg_VideoView.requestLayout();
+                                });
+
+                                startStopRegFace_btn.setText("Record Again");
+                                videoTip_textView.setText("Tap on the video to play");
+
                             }
                             else{
                                 // Recording cancelled/failed.
@@ -177,6 +234,18 @@ public class FaceRegistrationActivity extends AppCompatActivity {
                 );
 
     }
+
+    /*
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        if (exoPlayer != null) {
+            exoPlayer.release();
+            exoPlayer = null;
+        }
+    }
+    */
 
     private void launchCamera(){
 
@@ -244,7 +313,19 @@ public class FaceRegistrationActivity extends AppCompatActivity {
 
             try{
                 //file = new File(getExternalFilesDir(Environment.DIRECTORY_MOVIES), "/Amigos/" + faceRecordingName);
-                new UploadFaceRecordingOkHttp().uploadFaceRecording(FaceRegistrationActivity.this, faceRecordingName, videoUri, empId, empName);
+                new UploadFaceRecordingOkHttp().uploadFaceRecording(
+                        FaceRegistrationActivity.this,
+                        faceRegistrationProgressBar,
+                        faceReg_VideoView,
+                        startStopRegFace_btn,
+                        regFace_btn,
+                        regEmpId_editText,
+                        regEmpName_editText,
+                        faceRecordingName,
+                        videoUri,
+                        empId,
+                        empName
+                );
             }
             catch(Exception e){
                 new DialogUtility().getMeterialDialog(FaceRegistrationActivity.this, "Error!!", e.getMessage(), "error");

@@ -10,6 +10,12 @@ public class ApplicationConstants {
     public static int DELAY_DIALOG_FADE_IN = 1000;
     public static int CAMERA_PERMISSION_REQUEST_CODE = 100;
 
+    //okHttp Timeout parameters
+    public static int OKHTTP_CONNECTION_TIMEOUT = 30;
+    public static int OKHTTP_READ_TIMEOUT = 60;
+    public static int OKHTTP_WRITE_TIMEOUT = 60;
+    public static int OKHTTP_CALL_TIMEOUT = 120;
+
     public static String CAMERA_TYPE = "F";
     //public static String CAMERA_TYPE = "B";
 
