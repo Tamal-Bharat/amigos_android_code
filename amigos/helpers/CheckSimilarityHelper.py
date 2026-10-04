@@ -1,9 +1,10 @@
 import os
 import cv2
 from helpers.DatabaseHelper import DatabaseHelper
-from models.RegisterFaceModel import RegisterFaceModel
+from models.RegisterFaceModel import OperationMessageModel, RegisterFaceModel
 from insightface.app import FaceAnalysis
 from utilities.Constants import Constants
+from utilities.LogFile import LogFile
 
 class CheckSimilarityHelper():
 
@@ -13,51 +14,59 @@ class CheckSimilarityHelper():
 
     databaseHelper = DatabaseHelper()
     AppConstants = Constants()
+    AppLogFile = LogFile()
 
-    def checkSimilarity(self)-> RegisterFaceModel:
+    def checkSimilarity(self)-> RegisterFaceModel | None:
 
-        image_path = os.path.join(self.AppConstants.IMAGE_FRAME_FOLDER, self.AppConstants.IMAGE_FRAME_NAME)
-        image = cv2.imread(image_path)
+        try:
 
-        if image is None:
-            registerFaceModel = RegisterFaceModel(
-                code = 400,
-                message = "Could not read image."
-            )
+            image_path = os.path.join(self.AppConstants.IMAGE_FRAME_FOLDER, self.AppConstants.IMAGE_FRAME_NAME)
+            image = cv2.imread(image_path)
 
-            #return registerFaceModel
+            if image is None:
+                raise Exception("Could not read image") 
 
-        faces = self.app.get(image)
+            else:                
+                faces = self.app.get(image)
 
-        if not faces:
-            registerFaceModel = RegisterFaceModel(
-                code = 400,
-                message = "No face detected."
-            )
-                        
-            #return registerFaceModel
-        
-            
-        if len(faces) != 1:
-            registerFaceModel = RegisterFaceModel(
-                code = 400,
-                message = "Multiple faces detected."
-            )
-            
-            #return registerFaceModel
-        
-        # Liveliness check start here
+                if not faces:
+                    raise Exception("No face detected")
 
-        # Extract face embedding
-            embedding = faces[0].embedding
+                else:              
+                    
+                    if len(faces) != 1:
+                        raise Exception("Multiple faces detected")
 
-            results = self.databaseHelper.checkFaceSimilarity(embedding)
+                    else:                      
+                        # Liveliness check start here
 
-            for erp_id, emp_name, distance in results:
-                similarity = (1 - distance) * 100
-                print(f"{erp_id} | {emp_name} | Similarity: {similarity:.2f}%")
+                        # Extract face embedding
+                            embedding = faces[0].embedding
+
+                            results = self.databaseHelper.checkFaceSimilarity(embedding)
+
+                            if results is None:
+                                self.AppLogFile.writeAttandanceLogs("No face registered in database")
+
+                            else:
+                                #int distenceThreshold = 
+                                for erp_id, emp_name, distance in results:
+                                    similarity = (1 - distance) * 100
+                                    print(f"{erp_id} | {emp_name} | Similarity: {similarity:.2f}%")
+
+                                registerFaceModel = RegisterFaceModel(
+                                    code=200,
+                                    message = OperationMessageModel(
+                                        opCode="S",
+                                        opMessage="Similarity Check Successful"
+                                    )
+                                )
+
+                                return registerFaceModel
 
 
-    
+        except Exception as e:
+            self.AppLogFile.writeAttandanceLogs(str(e))
+            return None
 
     

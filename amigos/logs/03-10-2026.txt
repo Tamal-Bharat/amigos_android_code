@@ -313,3 +313,18 @@
 [21:24:10] Embeddings stored successfully
 [21:24:13] Embeddings stored successfully
 [21:24:16] Embeddings stored successfully
+[21:38:05] 
+
+[21:38:05] ****************************
+[21:38:05] Log File Created
+[21:38:05] Request from: 87 - vhh
+[21:38:06] [FACE] Time: 0.00s | Confidence: 0.68 | Saved: frames\frame_0000.jpg
+[21:38:07] [FACE] Time: 3.00s | Confidence: 0.84 | Saved: frames\frame_0001.jpg
+[21:38:09] [FACE] Time: 6.00s | Confidence: 0.78 | Saved: frames\frame_0002.jpg
+[21:38:11] [FACE] Time: 9.00s | Confidence: 0.81 | Saved: frames\frame_0003.jpg
+[21:38:11] frame could not be read
+[21:38:11] RESULT: Face detected in the video
+[21:38:16] Embeddings stored successfully
+[21:38:21] Embeddings stored successfully
+[21:38:26] Embeddings stored successfully
+[21:38:31] Embeddings stored successfully

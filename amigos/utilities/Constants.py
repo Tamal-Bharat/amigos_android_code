@@ -10,6 +10,8 @@ class Constants():
     NMS_THRESHOLD = 0.3
     TOP_K = 5000
 
+    SIMILARITY_CHECK_THRESHOLD = "0"
+
     # Face Video upload and Frame location folder names
     UPLOAD_VIDEO_FOLDER = "videos"
     FRAME_OUTPUT_DIR = "frames"

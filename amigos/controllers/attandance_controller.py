@@ -50,15 +50,38 @@ async def registerFace(video:UploadFile = File(...), emp_id:str = Form(...), emp
 async def checkSimilarity(image: UploadFile = File(...)):
 
     imageFileReadWriteHelper = ImageFileReadWriteHelper()
+    AppLogFile = LogFile()
 
     if not image.content_type or not image.content_type.startswith("image/"):
         registerFaceModel = RegisterFaceModel(
             code = 400,
-            message = "Invalid image format"
+            message=OperationMessageModel(
+                opCode="F",
+                opMessage="Invalid image format"
+            )
         )
+
+        AppLogFile.writeAttandanceLogs(registerFaceModel.message.opMessage)
+        return registerFaceModel
 
     else:
         registerFaceModel = await imageFileReadWriteHelper.saveFrameImage(image)   
 
-    return registerFaceModel
+        if registerFaceModel is None:
+            registerFaceModel = RegisterFaceModel(
+                code = 400,
+                message=OperationMessageModel(
+                    opCode="F",
+                    opMessage="Attandance Unsuccessful"
+                )
+            )
+
+            AppLogFile.writeAttandanceLogs(registerFaceModel.message.opMessage)    
+            return registerFaceModel
+
+        else:
+            AppLogFile.writeAttandanceLogs(registerFaceModel.message.opMessage)
+            return registerFaceModel
+
+    
     

@@ -61,43 +61,45 @@ class DatabaseHelper():
                 return 1
 
         except Exception as e:
-            self.AppLogFile.writeLogs(str(e))
-            #conn.commit()
-            #cursor.close()
-            #conn.close()
+            self.AppLogFile.writeLogs(str(e))            
             return None
             
         
 
 
-    def checkFaceSimilarity(self, embedding)-> list[tuple]:
+    def checkFaceSimilarity(self, embedding)-> list[tuple] | None:
 
-        conn = self.getDbConnObj()
-        cursor = conn.cursor()     
+        try:
+            conn = self.getDbConnObj()
+            cursor = conn.cursor()     
 
-        # ----------------------------
-        # Similarity Search
-        # ----------------------------
-        cursor.execute(
-            """
-            SELECT
-                erp_id,
-                emp_name,
-                embedding <=> %s::vector AS distance
-            FROM image_embeddings
-            ORDER BY embedding <=> %s::vector
-            LIMIT 5;
-            """,
-            (
-                embedding.tolist(),
-                embedding.tolist(),
-            ),
-        )
+            # ----------------------------
+            # Similarity Search
+            # ----------------------------
+            cursor.execute(
+                """
+                SELECT
+                    erp_id,
+                    emp_name,
+                    embedding <=> %s::vector AS distance
+                FROM image_embeddings
+                ORDER BY embedding <=> %s::vector
+                LIMIT 5;
+                """,
+                (
+                    embedding.tolist(),
+                    embedding.tolist(),
+                ),
+            )
 
-        results = cursor.fetchall()  
+            results = cursor.fetchall()  
 
-        conn.commit()
-        cursor.close()
-        conn.close()     
+            conn.commit()
+            cursor.close()
+            conn.close()     
 
-        return results
+            return results
+
+        except Exception as e:
+            self.AppLogFile.writeAttandanceLogs(str(e))
+            return None
