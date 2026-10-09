@@ -1,8 +1,10 @@
 package com.amigos.attendance.OkHttpHelper;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,11 +12,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.amigos.attendance.activities.FaceRegistrationActivity;
+import com.amigos.attendance.models.EmployeeModel;
 import com.amigos.attendance.models.FaceRegRespModel;
 import com.amigos.attendance.utilities.ApplicationConstants;
 import com.amigos.attendance.utilities.AspectRatioVideoView;
@@ -25,6 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -190,7 +195,7 @@ public class UploadFaceRecordingOkHttp {
 
     }
 
-    public void doAttendance(Context context, Bitmap bitmap){
+    public void doAttendance(Context context, TextView textViewCamera, Bitmap bitmap){
 
         try{
 
@@ -245,6 +250,10 @@ public class UploadFaceRecordingOkHttp {
                     @Override
                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
                         System.out.println("AAAA--> UPLOAD ERROR: " + e.getMessage());
+                        ((Activity) context).runOnUiThread(() -> {
+                            textViewCamera.setTextColor(Color.parseColor("#ff0000"));
+                            textViewCamera.setText("Connectivity Error!!.");
+                        });
                     }
 
                     @Override
@@ -257,22 +266,46 @@ public class UploadFaceRecordingOkHttp {
 
                                 System.out.println("AAAA--> UPLOAD RESPONSE: " + result);
 
-                                /*
-                                runOnUiThread(() -> {
-                                    textViewCamera.setText(result);
-                                });
-                                */
+                                Gson gson = new Gson();
+                                FaceRegRespModel faceRegRespModel = gson.fromJson(result, FaceRegRespModel.class);
+                                //System.out.println("AAAA--> Status Code: " + faceRegRespModel.getMessage().getOpCode());
+
+                                if(faceRegRespModel.getMessage().getOpCode().equalsIgnoreCase("S")){
+
+                                    String employeeJson = faceRegRespModel.getMessage().getOpMessage().replace("'", "\"");
+                                    EmployeeModel employeeModel  = new Gson().fromJson(employeeJson, EmployeeModel.class);
+
+                                    ((Activity) context).runOnUiThread(() -> {
+                                        textViewCamera.setTextColor(Color.parseColor("#0000ff"));
+                                        textViewCamera.setText("Attendanec Successful" + "\n" + employeeModel.getEmp_id() + "\n" + employeeModel.getEmp_name());
+                                    });
+                                }
+                                else{
+                                    ((Activity) context).runOnUiThread(() -> {
+                                        textViewCamera.setTextColor(Color.parseColor("#ff0000"));
+                                        textViewCamera.setText(faceRegRespModel.getMessage().getOpMessage());
+                                    });
+                                }
+
                             }
+                        }
+                        catch(Exception e){
+                            mainHandler.post(() ->{
+                                new DialogUtility().getMeterialDialog(context, "Error!", e.getMessage(), "error");
+                            });
                         }
                     }
                 });
+
             }
         }
         catch(Exception e){
             mainHandler.post(() ->{
-                new DialogUtility().getMeterialDialog(context, "Error!", "Video File upload failed", "error");
+                new DialogUtility().getMeterialDialog(context, "Error!", e.getMessage(), "error");
             });
         }
+
+
 
     }
 }

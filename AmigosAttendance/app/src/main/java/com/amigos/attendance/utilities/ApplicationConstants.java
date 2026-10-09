@@ -27,6 +27,7 @@ public class ApplicationConstants {
 
     //Public Services
     public static String BASE_URL = "http://192.168.29.22:8000";
+    //public static String BASE_URL = "https://dev61.wbsedcl.in";
     public static String REGISTER_FACE_RECORD = "/attandance/register-face";
     public static String ATTENDANCE_FACE_RECORD = "/attandance/check-similarity";
 

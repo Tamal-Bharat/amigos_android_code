@@ -161,7 +161,7 @@ public class CameraActivity extends AppCompatActivity {
 
                             if(realFaceCount == 5){
                                 //saveBitmapToGallery(lastRealFaceBitmap);
-                                new UploadFaceRecordingOkHttp().doAttendance(CameraActivity.this, lastRealFaceBitmap);
+                                new UploadFaceRecordingOkHttp().doAttendance(CameraActivity.this, textViewCamera,  lastRealFaceBitmap);
                                 imageAnalysis.clearAnalyzer();
                                 image.close();
                                 return;

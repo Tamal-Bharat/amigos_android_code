@@ -86,6 +86,7 @@ public class FaceRegistrationActivity extends AppCompatActivity {
             return insets;
         });
 
+        /*
         OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
         onBackPressedDispatcher.addCallback(this, new OnBackPressedCallback(true) {
             @Override
@@ -93,6 +94,7 @@ public class FaceRegistrationActivity extends AppCompatActivity {
 
             }
         });
+        */
 
         initializeComponents();
 

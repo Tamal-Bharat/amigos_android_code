@@ -30,6 +30,7 @@ import com.amigos.attendance.R;
 import com.amigos.attendance.utilities.ApplicationConstants;
 import com.amigos.attendance.utilities.DialogUtility;
 import com.amigos.attendance.utilities.MobilePermissionHelper;
+import com.amigos.attendance.utilities.NetworkUtils;
 import com.amigos.attendance.utilities.SqliteDatabaseHelper;
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -80,16 +81,21 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (MobilePermissionHelper.isCameraPermissionGranted(HomeActivity.this)) {
-                    // Permission is already granted
-                    System.out.println("AAAA--> " + "Already Camera Permission Granted");
+                if(NetworkUtils.isInternetAvailable(HomeActivity.this)){
+                    if (MobilePermissionHelper.isCameraPermissionGranted(HomeActivity.this)) {
+                        // Permission is already granted
+                        System.out.println("AAAA--> " + "Already Camera Permission Granted");
 
-                    //Open the Camera to register the attendance
-                    startCameraToRecognizeFace();
-                } else {
-                    // Permission is not granted
-                    System.out.println("AAAA--> " + "Request for Camera Permission");
-                    MobilePermissionHelper.requestCameraPermission(HomeActivity.this);
+                        //Open the Camera to register the attendance
+                        startCameraToRecognizeFace();
+                    } else {
+                        // Permission is not granted
+                        System.out.println("AAAA--> " + "Request for Camera Permission");
+                        MobilePermissionHelper.requestCameraPermission(HomeActivity.this);
+                    }
+                }
+                else{
+                    new DialogUtility().getMeterialDialog(HomeActivity.this, "Error!!", "Please make available the internet", "error");
                 }
 
             }
