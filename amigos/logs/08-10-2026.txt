@@ -1,0 +1,12 @@
+[22:33:50] connection to server at "192.168.29.198", port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[22:39:42] connection to server at "192.168.29.198", port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[22:41:23] connection to server at "192.168.29.198", port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+[22:42:23] connection to server at "192.168.29.198", port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+

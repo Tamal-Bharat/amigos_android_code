@@ -1,0 +1,330 @@
+[20:25:20] 
+
+[20:25:20] ****************************
+[20:25:20] Log File Created
+[20:25:20] Request from: 900 - ggh
+[20:25:20] Frame has multiple faces
+[20:25:22] [FACE] Time: 3.00s | Confidence: 0.91 | Saved: frames\frame_0000.jpg
+[20:25:23] [FACE] Time: 6.00s | Confidence: 0.92 | Saved: frames\frame_0001.jpg
+[20:25:25] Frame has multiple faces
+[20:25:25] frame could not be read
+[20:25:25] RESULT: Face detected in the video
+[20:27:13] 
+
+[20:27:13] ****************************
+[20:27:13] Log File Created
+[20:27:13] Request from: 900 - ggh
+[20:27:13] Frame has multiple faces
+[20:27:15] Frame has multiple faces
+[20:27:17] Frame has multiple faces
+[20:27:18] Frame has multiple faces
+[20:27:18] frame could not be read
+[20:27:18] RESULT: No face detected in the video
+[20:28:19] 
+
+[20:28:19] ****************************
+[20:28:19] Log File Created
+[20:28:19] Request from: 900 - ggh
+[20:28:20] Frame has multiple faces
+[20:28:21] [FACE] Time: 3.00s | Confidence: 0.82 | Saved: frames\frame_0000.jpg
+[20:28:22] [FACE] Time: 6.00s | Confidence: 0.81 | Saved: frames\frame_0001.jpg
+[20:28:23] Frame has multiple faces
+[20:28:23] frame could not be read
+[20:28:23] RESULT: Face detected in the video
+[20:28:26] Embeddings stored successfully
+[20:28:29] Embeddings stored successfully
+[20:41:19] 
+
+[20:41:19] ****************************
+[20:41:19] Log File Created
+[20:41:19] Request from: 900 - zxc
+[20:41:19] Frame has no faces
+[20:41:19] Frame has no faces
+[20:41:19] Some Exception occured in extractFrameFromVideo
+[20:41:19] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:41:19] Some Exception occured
+[20:43:26] 
+
+[20:43:26] ****************************
+[20:43:26] Log File Created
+[20:43:26] Request from: 900 - cvg
+[20:43:26] Frame has no faces
+[20:43:26] Frame has no faces
+[20:43:26] Some Exception occured in extractFrameFromVideo
+[20:43:26] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:43:26] Some Exception occured
+[20:44:30] 
+
+[20:44:30] ****************************
+[20:44:30] Log File Created
+[20:44:30] Request from: 90 - vvg
+[20:44:30] Frame has no faces
+[20:44:30] Frame has no faces
+[20:44:30] Some Exception occured in extractFrameFromVideo
+[20:44:30] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:44:30] Some Exception occured
+[20:46:03] 
+
+[20:46:03] ****************************
+[20:46:03] Log File Created
+[20:46:03] Request from: 90 - ghh
+[20:46:03] Frame has no faces
+[20:46:03] Frame has no faces
+[20:46:03] Some Exception occured in extractFrameFromVideo
+[20:46:03] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:46:03] Some Exception occured
+[20:50:17] 
+
+[20:50:17] ****************************
+[20:50:17] Log File Created
+[20:50:17] Request from: 90 - gghj
+[20:50:18] Frame has no faces
+[20:50:18] Frame has no faces
+[20:50:18] Some Exception occured in extractFrameFromVideo
+[20:50:18] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:50:18] Some Exception occured
+[20:50:33] 
+
+[20:50:33] ****************************
+[20:50:33] Log File Created
+[20:50:33] Request from: 90 - gg
+[20:50:34] Frame has no faces
+[20:50:34] Frame has no faces
+[20:50:34] Some Exception occured in extractFrameFromVideo
+[20:50:34] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:50:34] Some Exception occured
+[20:56:02] 
+
+[20:56:02] ****************************
+[20:56:02] Log File Created
+[20:56:02] Request from: 89 - ggh
+[20:56:03] Frame has no faces
+[20:56:03] Frame has no faces
+[20:56:03] Some Exception occured in extractFrameFromVideo
+[20:56:03] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:56:03] Some Exception occured
+[20:59:12] 
+
+[20:59:12] ****************************
+[20:59:12] Log File Created
+[20:59:12] Request from: 89 - vkvjvj
+[20:59:12] Frame has no faces
+[20:59:12] Frame has no faces
+[20:59:12] Some Exception occured in extractFrameFromVideo
+[20:59:12] Exception in: <function registerFace at 0x000001AB52817A30>
+[20:59:12] Some Exception occured
+[21:01:37] 
+
+[21:01:37] ****************************
+[21:01:37] Log File Created
+[21:01:37] Request from: 89 - gghg
+[21:01:37] Frame has no faces
+[21:01:37] Frame has no faces
+[21:01:37] Some Exception occured in extractFrameFromVideo
+[21:01:37] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:01:37] Some Exception occured
+[21:04:11] 
+
+[21:04:11] ****************************
+[21:04:11] Log File Created
+[21:04:11] Request from: 788 - ghhgh
+[21:04:12] Frame has no faces
+[21:04:12] Frame has no faces
+[21:04:12] Some Exception occured in extractFrameFromVideo
+[21:04:12] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:04:12] Some Exception occured
+[21:04:19] 
+
+[21:04:19] ****************************
+[21:04:19] Log File Created
+[21:04:19] Request from: 788 - ghhgh
+[21:04:19] Frame has no faces
+[21:04:19] Frame has no faces
+[21:04:19] Some Exception occured in extractFrameFromVideo
+[21:04:19] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:04:19] Some Exception occured
+[21:04:42] 
+
+[21:04:42] ****************************
+[21:04:42] Log File Created
+[21:04:42] Request from: 788 - ghhgh
+[21:04:42] Frame has no faces
+[21:04:42] Frame has no faces
+[21:04:42] Some Exception occured in extractFrameFromVideo
+[21:04:42] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:04:42] Some Exception occured
+[21:04:49] 
+
+[21:04:49] ****************************
+[21:04:49] Log File Created
+[21:04:49] Request from: 788 - ghhgh
+[21:04:49] Frame has no faces
+[21:04:49] Frame has no faces
+[21:04:49] Some Exception occured in extractFrameFromVideo
+[21:04:49] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:04:49] Some Exception occured
+[21:08:47] 
+
+[21:08:47] ****************************
+[21:08:47] Log File Created
+[21:08:47] Request from: 78 - 5gvv
+[21:08:47] Frame has no faces
+[21:08:47] Frame has no faces
+[21:08:47] Some Exception occured in extractFrameFromVideo
+[21:08:47] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:08:47] Some Exception occured
+[21:08:53] 
+
+[21:08:53] ****************************
+[21:08:53] Log File Created
+[21:08:53] Request from: 78 - 5gvv
+[21:08:53] Frame has no faces
+[21:08:53] Frame has no faces
+[21:08:53] Some Exception occured in extractFrameFromVideo
+[21:08:53] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:08:53] Some Exception occured
+[21:08:58] 
+
+[21:08:58] ****************************
+[21:08:58] Log File Created
+[21:08:58] Request from: 78 - 5gvv
+[21:08:59] Frame has no faces
+[21:08:59] Frame has no faces
+[21:08:59] Some Exception occured in extractFrameFromVideo
+[21:08:59] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:08:59] Some Exception occured
+[21:12:37] 
+
+[21:12:37] ****************************
+[21:12:37] Log File Created
+[21:12:37] Request from: 876 - vghh
+[21:12:37] Frame has no faces
+[21:12:37] Frame has no faces
+[21:12:37] Some Exception occured in extractFrameFromVideo
+[21:12:37] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:12:37] Some Exception occured
+[21:12:51] 
+
+[21:12:51] ****************************
+[21:12:51] Log File Created
+[21:12:51] Request from: 876 - vghh
+[21:12:51] Frame has no faces
+[21:12:51] Frame has no faces
+[21:12:51] Some Exception occured in extractFrameFromVideo
+[21:12:51] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:12:51] Some Exception occured
+[21:12:55] 
+
+[21:12:55] ****************************
+[21:12:55] Log File Created
+[21:12:55] Request from: 876 - vghh
+[21:12:56] Frame has no faces
+[21:12:56] Frame has no faces
+[21:12:56] Some Exception occured in extractFrameFromVideo
+[21:12:56] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:12:56] Some Exception occured
+[21:15:52] 
+
+[21:15:52] ****************************
+[21:15:52] Log File Created
+[21:15:52] Request from: 755 - gghh
+[21:15:52] Frame has no faces
+[21:15:52] Frame has no faces
+[21:15:52] Some Exception occured in extractFrameFromVideo
+[21:15:52] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:15:52] Some Exception occured
+[21:15:58] 
+
+[21:15:58] ****************************
+[21:15:58] Log File Created
+[21:15:58] Request from: 755 - gghh
+[21:15:58] Frame has no faces
+[21:15:58] Frame has no faces
+[21:15:58] Some Exception occured in extractFrameFromVideo
+[21:15:58] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:15:58] Some Exception occured
+[21:16:13] 
+
+[21:16:13] ****************************
+[21:16:13] Log File Created
+[21:16:13] Request from: 755 - gghh
+[21:16:13] Frame has no faces
+[21:16:13] Frame has no faces
+[21:16:13] Some Exception occured in extractFrameFromVideo
+[21:16:13] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:16:13] Some Exception occured
+[21:18:46] 
+
+[21:18:46] ****************************
+[21:18:46] Log File Created
+[21:18:46] Request from: 577 - gghh
+[21:18:47] Frame has no faces
+[21:18:47] Frame has no faces
+[21:18:47] Some Exception occured in extractFrameFromVideo
+[21:18:47] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:18:47] Some Exception occured
+[21:19:40] 
+
+[21:19:40] ****************************
+[21:19:40] Log File Created
+[21:19:40] Request from: 566 - gghh
+[21:19:40] Frame has no faces
+[21:19:40] Frame has no faces
+[21:19:40] Some Exception occured in extractFrameFromVideo
+[21:19:40] Exception in: <function registerFace at 0x000001AB52817A30>
+[21:19:40] Some Exception occured
+[21:21:09] 
+
+[21:21:09] ****************************
+[21:21:09] Log File Created
+[21:21:09] Request from: 123 - abc
+[21:21:10] Frame has multiple faces
+[21:21:11] Frame has multiple faces
+[21:21:12] [FACE] Time: 6.00s | Confidence: 0.75 | Saved: frames\frame_0000.jpg
+[21:21:13] [FACE] Time: 9.00s | Confidence: 0.75 | Saved: frames\frame_0001.jpg
+[21:21:13] frame could not be read
+[21:21:13] RESULT: Face detected in the video
+[21:21:16] Embeddings stored successfully
+[21:21:21] Embeddings stored successfully
+[21:23:10] 
+
+[21:23:10] ****************************
+[21:23:10] Log File Created
+[21:23:10] Request from: 87 - vhh
+[21:23:11] [FACE] Time: 0.00s | Confidence: 0.66 | Saved: frames\frame_0000.jpg
+[21:23:12] [FACE] Time: 3.00s | Confidence: 0.69 | Saved: frames\frame_0001.jpg
+[21:23:13] Frame has no faces
+[21:23:13] Frame has no faces
+[21:23:13] Some Exception occured in extractFrameFromVideo
+[21:23:13] Exception in: <function registerFace at 0x00000237AB997B50>
+[21:23:13] Some Exception occured
+[21:23:59] 
+
+[21:23:59] ****************************
+[21:23:59] Log File Created
+[21:23:59] Request from: 87 - vhh
+[21:24:00] [FACE] Time: 0.00s | Confidence: 0.68 | Saved: frames\frame_0000.jpg
+[21:24:01] [FACE] Time: 3.00s | Confidence: 0.84 | Saved: frames\frame_0001.jpg
+[21:24:02] [FACE] Time: 6.00s | Confidence: 0.78 | Saved: frames\frame_0002.jpg
+[21:24:04] [FACE] Time: 9.00s | Confidence: 0.81 | Saved: frames\frame_0003.jpg
+[21:24:04] frame could not be read
+[21:24:04] RESULT: Face detected in the video
+[21:24:07] Embeddings stored successfully
+[21:24:10] Embeddings stored successfully
+[21:24:13] Embeddings stored successfully
+[21:24:16] Embeddings stored successfully
+[21:38:05] 
+
+[21:38:05] ****************************
+[21:38:05] Log File Created
+[21:38:05] Request from: 87 - vhh
+[21:38:06] [FACE] Time: 0.00s | Confidence: 0.68 | Saved: frames\frame_0000.jpg
+[21:38:07] [FACE] Time: 3.00s | Confidence: 0.84 | Saved: frames\frame_0001.jpg
+[21:38:09] [FACE] Time: 6.00s | Confidence: 0.78 | Saved: frames\frame_0002.jpg
+[21:38:11] [FACE] Time: 9.00s | Confidence: 0.81 | Saved: frames\frame_0003.jpg
+[21:38:11] frame could not be read
+[21:38:11] RESULT: Face detected in the video
+[21:38:16] Embeddings stored successfully
+[21:38:21] Embeddings stored successfully
+[21:38:26] Embeddings stored successfully
+[21:38:31] Embeddings stored successfully
