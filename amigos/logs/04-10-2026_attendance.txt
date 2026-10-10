@@ -1,3 +1,0 @@
-[22:34:59] Multiple faces detected
-[22:34:59] Attandance Unsuccessful
-[22:35:23] Success
